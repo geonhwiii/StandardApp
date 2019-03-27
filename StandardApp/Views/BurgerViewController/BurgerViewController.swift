@@ -19,7 +19,7 @@ class BurgerViewController: UIViewController {
    // MARK: - Life cycle
    override func viewDidLoad() {
       super.viewDidLoad()
-      view.backgroundColor = Theme.background
+      view.backgroundColor = Theme.backgroundColor
       addButton.createFloatingActionButton()
       
       BurgerFunctions.readBurger { [weak self] in

@@ -70,6 +70,9 @@
                                     <constraint firstAttribute="width" secondItem="nzz-wr-LjS" secondAttribute="height" multiplier="1:1" id="glF-mO-WGQ"/>
                                 </constraints>
                                 <state key="normal" image="add_button_selected"/>
+                                <connections>
+                                    <segue destination="KOM-cN-R4C" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="Yfj-sx-mMH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -91,6 +94,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XbY-Yp-GzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="477.60000000000002" y="-235.23238380809596"/>
+        </scene>
+        <!--AddBurgerViewController-->
+        <scene sceneID="I1d-OX-Vy4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddBurgerViewController" id="KOM-cN-R4C" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="02P-8M-o4D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172" y="-234"/>
         </scene>
     </scenes>
     <resources>
