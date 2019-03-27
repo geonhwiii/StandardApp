@@ -19,6 +19,7 @@ class AddBurgerViewController: UIViewController {
    @IBOutlet weak var imageView: UIImageView!
    
    var doneSaving: (() -> ())?
+   var burgerIndexToEdit: Int?
    
    // MARK: - Life cycle
    override func viewDidLoad() {
@@ -31,6 +32,12 @@ class AddBurgerViewController: UIViewController {
       titleLabel.layer.shadowColor = UIColor.white.cgColor
       titleLabel.layer.shadowOffset = CGSize.zero
       titleLabel.layer.shadowRadius = 5
+      
+      if let index = burgerIndexToEdit {
+         let burger = Data.burgerModels[index]
+         burgerTextField.text = burger.title
+         imageView.image = burger.image
+      }
    }
    
    // MARK: - Methods
@@ -47,6 +54,7 @@ class AddBurgerViewController: UIViewController {
          
          burgerTextField.rightView = imageView
          burgerTextField.rightViewMode = .unlessEditing
+         
          burgerTextField.layer.borderColor = UIColor.red.cgColor
          burgerTextField.layer.borderWidth = 1
          burgerTextField.layer.cornerRadius = 5
@@ -54,7 +62,13 @@ class AddBurgerViewController: UIViewController {
          return
       }
       
-      BurgerFunctions.createBurger(burgerModel: BurgerModel(title: newBurgerName, image: imageView.image))
+      if let index = burgerIndexToEdit {
+         BurgerFunctions.updateBurger(at: index, title: newBurgerName, image: imageView.image)
+      } else {
+         BurgerFunctions.createBurger(burgerModel: BurgerModel(title: newBurgerName, image: imageView.image))
+      }
+      
+      
       if let doneSaving = doneSaving {
          doneSaving()
       }
@@ -70,36 +84,35 @@ class AddBurgerViewController: UIViewController {
    }
    
    @IBAction func addPhoto(_ sender: Any) {
-      if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-         PHPhotoLibrary.requestAuthorization { (status) in
-            switch status {
-            case .authorized:
+      PHPhotoLibrary.requestAuthorization { (status) in
+         switch status {
+         case .authorized:
+            self.presentPhotoPickerController()
+         case .notDetermined:
+            if status == PHAuthorizationStatus.authorized {
                self.presentPhotoPickerController()
-            case .notDetermined:
-               if status == PHAuthorizationStatus.authorized {
-                  self.presentPhotoPickerController()
-               }
-            case .restricted:
-               let alert = UIAlertController(title: "Photo Library Restricted", message: "Photo Library access is restricted and cannot be accessed.", preferredStyle: .alert)
-               let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-               alert.addAction(okAction)
-               self.present(alert, animated: true, completion: nil)
-            case .denied:
-               let alert = UIAlertController(title: "Photo Library Denied", message: "Photo Library access was previously denied. Pleas update your settings if you wish to change this.", preferredStyle: .alert)
-               let gotoSettingsAction = UIAlertAction(title: "Go to Settings", style: .default) { (action) in
-                  DispatchQueue.main.async {
-                     guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
-                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                  }
-               }
-               let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-               alert.addAction(gotoSettingsAction)
-               alert.addAction(cancelAction)
-               self.present(alert, animated: true, completion: nil)
-            
             }
+         case .restricted:
+            let alert = UIAlertController(title: "Photo Library Restricted", message: "Photo Library access is restricted and cannot be accessed.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+         case .denied:
+            let alert = UIAlertController(title: "Photo Library Denied", message: "Photo Library access was previously denied. Pleas update your settings if you wish to change this.", preferredStyle: .alert)
+            let gotoSettingsAction = UIAlertAction(title: "Go to Settings", style: .default) { (action) in
+               DispatchQueue.main.async {
+                  guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+                  UIApplication.shared.open(url, options: [:], completionHandler: nil)
+               }
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(gotoSettingsAction)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
+            
          }
       }
+      
    }
 }
 

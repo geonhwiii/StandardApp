@@ -28,12 +28,13 @@ class BurgerFunctions {
       
    }
    
-   static func updateBurger() {
-      
+   static func updateBurger(at index: Int, title: String, image: UIImage? = nil) {
+      Data.burgerModels[index].title = title
+      Data.burgerModels[index].image = image
    }
    
-   static func deleteBurger() {
-      
+   static func deleteBurger(index: Int) {
+      Data.burgerModels.remove(at: index)
    }
    
    

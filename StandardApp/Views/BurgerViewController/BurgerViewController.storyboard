@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,13 +36,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uEW-H1-iuU">
-                                                    <rect key="frame" x="15" y="11" width="345" height="138"/>
+                                                    <rect key="frame" x="15" y="11" width="384" height="138"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j8D-bC-ZXC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="345" height="138"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="384" height="138"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qP2-eK-Ewl">
-                                                            <rect key="frame" x="8" y="45" width="329" height="48"/>
+                                                            <rect key="frame" x="8" y="45" width="368" height="48"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -101,10 +102,63 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="nzz-wr-LjS" id="5Bz-Nn-23t"/>
+                        <outlet property="helpView" destination="gNJ-i7-CRP" id="Jkx-48-HRs"/>
                         <outlet property="tableView" destination="lVJ-0a-R9A" id="5aN-7O-KHX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XbY-Yp-GzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" id="gNJ-i7-CRP">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="687"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4KA-0h-4yC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="687"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dH-GO-yfq" customClass="AppUIButton" customModule="StandardApp" customModuleProvider="target">
+                                <rect key="frame" x="18" y="603" width="339" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="kyj-cB-DeI"/>
+                                </constraints>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeHelpView:" destination="hBr-Hx-utE" eventType="touchUpInside" id="KkE-Px-LBg"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="g6z-ex-xaT">
+                                <rect key="frame" x="18" y="40" width="339" height="357"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe rows for more features" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwe-1y-mMP">
+                                        <rect key="frame" x="0.0" y="0.0" width="339" height="41"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit_ex" translatesAutoresizingMaskIntoConstraints="NO" id="7Lh-B2-Frw">
+                                        <rect key="frame" x="0.0" y="49" width="339" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="AjD-Cf-XlR"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete_ex" translatesAutoresizingMaskIntoConstraints="NO" id="KU0-ba-9Tg">
+                                        <rect key="frame" x="0.0" y="207" width="339" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="0pm-39-5eh"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="g6z-ex-xaT" firstAttribute="leading" secondItem="4KA-0h-4yC" secondAttribute="leading" constant="18" id="6dK-7v-jKp"/>
+                            <constraint firstAttribute="trailing" secondItem="9dH-GO-yfq" secondAttribute="trailing" constant="18" id="FUH-mA-WXA"/>
+                            <constraint firstItem="9dH-GO-yfq" firstAttribute="leading" secondItem="4KA-0h-4yC" secondAttribute="leading" constant="18" id="Qno-lo-qpL"/>
+                            <constraint firstItem="g6z-ex-xaT" firstAttribute="top" secondItem="4KA-0h-4yC" secondAttribute="top" constant="40" id="h2m-Y6-0kk"/>
+                            <constraint firstAttribute="bottom" secondItem="9dH-GO-yfq" secondAttribute="bottom" constant="40" id="iPc-oW-rBS"/>
+                            <constraint firstAttribute="trailing" secondItem="g6z-ex-xaT" secondAttribute="trailing" constant="18" id="ib7-7S-lB2"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
             </objects>
             <point key="canvasLocation" x="477.60000000000002" y="-235.23238380809596"/>
         </scene>
@@ -119,5 +173,7 @@
     </scenes>
     <resources>
         <image name="add_button_selected" width="375" height="375"/>
+        <image name="delete_ex" width="306" height="120"/>
+        <image name="edit_ex" width="306" height="117"/>
     </resources>
 </document>

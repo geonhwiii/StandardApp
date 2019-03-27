@@ -26,6 +26,14 @@ class BurgerTableViewCell: UITableViewCell {
    // MARK: - Methods
    func setup(burgerModel: BurgerModel) {
       titleLabel.text = burgerModel.title
-      burgerImageView.image = burgerModel.image
+      
+      if let burgerImage = burgerModel.image {
+         burgerImageView.alpha = 0.3
+         burgerImageView.image = burgerImage
+         
+         UIView.animate(withDuration: 1) {
+            self.burgerImageView.alpha = 1
+         }
+      }
    }
 }
