@@ -17,12 +17,8 @@ class BurgerTableViewCell: UITableViewCell {
       super.awakeFromNib()
       
       cardView.addShadowAndRoundedCorners()
-      
-      cardView.layer.shadowOpacity = 1
-      cardView.layer.shadowOffset = CGSize.zero
-      cardView.layer.shadowColor = UIColor.darkGray.cgColor
-      cardView.layer.cornerRadius = 10
-      
+      titleLabel.font = UIFont(name: Theme.mainFontName, size: 32)
+      cardView.backgroundColor = Theme.accent
    }
    
    // MARK: - Methods

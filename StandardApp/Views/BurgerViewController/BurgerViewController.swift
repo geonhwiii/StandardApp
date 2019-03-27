@@ -14,10 +14,13 @@ class BurgerViewController: UIViewController {
    
    // MARK: - Properties
    @IBOutlet weak var tableView: UITableView!
+   @IBOutlet weak var addButton: UIButton!
    
    // MARK: - Life cycle
    override func viewDidLoad() {
       super.viewDidLoad()
+      view.backgroundColor = Theme.background
+      addButton.createFloatingActionButton()
       
       BurgerFunctions.readBurger { [weak self] in
          // completion
@@ -25,6 +28,9 @@ class BurgerViewController: UIViewController {
          self?.tableView.delegate = self
          self?.tableView.dataSource = self
       }
+      
+      
+      
       
    }
 }

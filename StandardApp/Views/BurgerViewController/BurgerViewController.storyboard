@@ -18,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lVJ-0a-R9A">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lVJ-0a-R9A">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="burgerCell" rowHeight="160" id="tb0-zb-L0F" customClass="BurgerTableViewCell" customModule="StandardApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tb0-zb-L0F" id="m3N-Lp-gbj">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uEW-H1-iuU">
@@ -34,7 +34,7 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qP2-eK-Ewl">
                                                             <rect key="frame" x="8" y="45" width="329" height="48"/>
-                                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="32"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -55,6 +55,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="uEW-H1-iuU" secondAttribute="trailing" id="rNr-FU-294"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="cardView" destination="uEW-H1-iuU" id="flT-lu-yr7"/>
                                             <outlet property="titleLabel" destination="qP2-eK-Ewl" id="Pxt-j6-G9d"/>
@@ -62,10 +63,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzz-wr-LjS">
+                                <rect key="frame" x="307" y="599" width="52" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="NRn-Nq-X1M"/>
+                                    <constraint firstAttribute="width" secondItem="nzz-wr-LjS" secondAttribute="height" multiplier="1:1" id="glF-mO-WGQ"/>
+                                </constraints>
+                                <state key="normal" image="add_button_selected"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lVJ-0a-R9A" firstAttribute="leading" secondItem="H05-Mj-cre" secondAttribute="leading" id="GRF-1u-e0d"/>
+                            <constraint firstAttribute="bottom" secondItem="nzz-wr-LjS" secondAttribute="bottom" constant="16" id="HpG-rA-XRl"/>
+                            <constraint firstAttribute="trailing" secondItem="nzz-wr-LjS" secondAttribute="trailing" constant="16" id="Rzt-DV-qgl"/>
                             <constraint firstItem="lVJ-0a-R9A" firstAttribute="bottom" secondItem="H05-Mj-cre" secondAttribute="bottom" id="WRW-ZI-bFY"/>
                             <constraint firstItem="lVJ-0a-R9A" firstAttribute="trailing" secondItem="H05-Mj-cre" secondAttribute="trailing" id="oTM-CD-Pwk"/>
                             <constraint firstItem="lVJ-0a-R9A" firstAttribute="top" secondItem="1fT-eT-hxZ" secondAttribute="top" id="xNu-0D-Vcy"/>
@@ -73,6 +84,7 @@
                         <viewLayoutGuide key="safeArea" id="H05-Mj-cre"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="nzz-wr-LjS" id="5Bz-Nn-23t"/>
                         <outlet property="tableView" destination="lVJ-0a-R9A" id="5aN-7O-KHX"/>
                     </connections>
                 </viewController>
@@ -81,4 +93,7 @@
             <point key="canvasLocation" x="477.60000000000002" y="-235.23238380809596"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add_button_selected" width="375" height="375"/>
+    </resources>
 </document>

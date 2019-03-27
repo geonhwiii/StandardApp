@@ -11,6 +11,9 @@
 		BB261472224B253900BB948D /* BurgerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB261471224B253900BB948D /* BurgerViewController.storyboard */; };
 		BB261474224B27B300BB948D /* BurgerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB261473224B27B300BB948D /* BurgerTableViewCell.swift */; };
 		BB261476224B2CA100BB948D /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB261475224B2CA100BB948D /* UIViewExtensions.swift */; };
+		BB26147B224B2EDE00BB948D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB26147A224B2EDE00BB948D /* Theme.swift */; };
+		BB26147D224B300E00BB948D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB26147C224B300E00BB948D /* Colors.xcassets */; };
+		BB26147F224B341B00BB948D /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB26147E224B341B00BB948D /* UIButtonExtensions.swift */; };
 		BB43D360224B20AF0093158D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43D35F224B20AF0093158D /* AppDelegate.swift */; };
 		BB43D367224B20B00093158D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB43D366224B20B00093158D /* Assets.xcassets */; };
 		BB43D36A224B20B00093158D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB43D368224B20B00093158D /* LaunchScreen.storyboard */; };
@@ -24,6 +27,9 @@
 		BB261471224B253900BB948D /* BurgerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BurgerViewController.storyboard; sourceTree = "<group>"; };
 		BB261473224B27B300BB948D /* BurgerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerTableViewCell.swift; sourceTree = "<group>"; };
 		BB261475224B2CA100BB948D /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		BB26147A224B2EDE00BB948D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		BB26147C224B300E00BB948D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		BB26147E224B341B00BB948D /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		BB43D35C224B20AF0093158D /* StandardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StandardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB43D35F224B20AF0093158D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB43D366224B20B00093158D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +61,15 @@
 			path = BurgerViewController;
 			sourceTree = "<group>";
 		};
+		BB261477224B2EB300BB948D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB26147A224B2EDE00BB948D /* Theme.swift */,
+				BB26147C224B300E00BB948D /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		BB43D353224B20AF0093158D = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +89,7 @@
 		BB43D35E224B20AF0093158D /* StandardApp */ = {
 			isa = PBXGroup;
 			children = (
+				BB261477224B2EB300BB948D /* Resources */,
 				BB43D373224B216E0093158D /* Extensions */,
 				BB43D371224B21540093158D /* Model */,
 				BB43D372224B21600093158D /* Views */,
@@ -107,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				BB261475224B2CA100BB948D /* UIViewExtensions.swift */,
+				BB26147E224B341B00BB948D /* UIButtonExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -186,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB43D36A224B20B00093158D /* LaunchScreen.storyboard in Resources */,
+				BB26147D224B300E00BB948D /* Colors.xcassets in Resources */,
 				BB261472224B253900BB948D /* BurgerViewController.storyboard in Resources */,
 				BB43D367224B20B00093158D /* Assets.xcassets in Resources */,
 			);
@@ -199,10 +217,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB43D37B224B225E0093158D /* BurgerFunctions.swift in Sources */,
+				BB26147B224B2EDE00BB948D /* Theme.swift in Sources */,
 				BB261476224B2CA100BB948D /* UIViewExtensions.swift in Sources */,
 				BB43D360224B20AF0093158D /* AppDelegate.swift in Sources */,
 				BB43D379224B21D10093158D /* BurgerModel.swift in Sources */,
 				BB43D376224B21910093158D /* Data.swift in Sources */,
+				BB26147F224B341B00BB948D /* UIButtonExtensions.swift in Sources */,
 				BB261474224B27B300BB948D /* BurgerTableViewCell.swift in Sources */,
 				BB261470224B24F900BB948D /* BurgerViewController.swift in Sources */,
 			);
