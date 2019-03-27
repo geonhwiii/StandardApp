@@ -19,7 +19,7 @@ class BurgerFunctions {
          if Data.burgerModels.count == 0 {
             Data.burgerModels.append(BurgerModel(title: "SingleBurger"))
             Data.burgerModels.append(BurgerModel(title: "DoubleBurger"))
-            Data.burgerModels.append(BurgerModel(title: "CheezeBurger"))
+            Data.burgerModels.append(BurgerModel(title: "CheeseBurger"))
          }
       }
       DispatchQueue.main.async {
