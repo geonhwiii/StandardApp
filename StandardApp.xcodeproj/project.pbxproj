@@ -13,6 +13,7 @@
 		BB43D36A224B20B00093158D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB43D368224B20B00093158D /* LaunchScreen.storyboard */; };
 		BB43D376224B21910093158D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43D375224B21910093158D /* Data.swift */; };
 		BB43D379224B21D10093158D /* BurgerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43D378224B21D10093158D /* BurgerModel.swift */; };
+		BB43D37B224B225E0093158D /* BurgerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43D37A224B225E0093158D /* BurgerFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BB43D36B224B20B00093158D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB43D375224B21910093158D /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		BB43D378224B21D10093158D /* BurgerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerModel.swift; sourceTree = "<group>"; };
+		BB43D37A224B225E0093158D /* BurgerFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				BB43D378224B21D10093158D /* BurgerModel.swift */,
+				BB43D37A224B225E0093158D /* BurgerFunctions.swift */,
 			);
 			path = Burger;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB43D37B224B225E0093158D /* BurgerFunctions.swift in Sources */,
 				BB43D360224B20AF0093158D /* AppDelegate.swift in Sources */,
 				BB43D379224B21D10093158D /* BurgerModel.swift in Sources */,
 				BB43D376224B21910093158D /* Data.swift in Sources */,
