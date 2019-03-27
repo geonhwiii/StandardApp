@@ -21,6 +21,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lVJ-0a-R9A">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="Vam-Sf-Ju3">
+                                    <rect key="frame" x="0.0" y="188" width="375" height="1"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="burgerCell" rowHeight="160" id="tb0-zb-L0F" customClass="BurgerTableViewCell" customModule="StandardApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="160"/>
@@ -32,6 +37,9 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uEW-H1-iuU">
                                                     <rect key="frame" x="15" y="11" width="345" height="138"/>
                                                     <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j8D-bC-ZXC">
+                                                            <rect key="frame" x="0.0" y="0.0" width="345" height="138"/>
+                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qP2-eK-Ewl">
                                                             <rect key="frame" x="8" y="45" width="329" height="48"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="32"/>
@@ -43,6 +51,10 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="qP2-eK-Ewl" secondAttribute="trailing" constant="8" id="49N-xi-6Ft"/>
                                                         <constraint firstItem="qP2-eK-Ewl" firstAttribute="top" secondItem="uEW-H1-iuU" secondAttribute="top" constant="45" id="EOl-5u-PWJ"/>
+                                                        <constraint firstItem="j8D-bC-ZXC" firstAttribute="leading" secondItem="uEW-H1-iuU" secondAttribute="leading" id="MFZ-tL-2f9"/>
+                                                        <constraint firstAttribute="trailing" secondItem="j8D-bC-ZXC" secondAttribute="trailing" id="QCJ-05-snu"/>
+                                                        <constraint firstItem="j8D-bC-ZXC" firstAttribute="top" secondItem="uEW-H1-iuU" secondAttribute="top" id="TpY-6Z-WEG"/>
+                                                        <constraint firstAttribute="bottom" secondItem="j8D-bC-ZXC" secondAttribute="bottom" id="aHh-kA-RME"/>
                                                         <constraint firstItem="qP2-eK-Ewl" firstAttribute="centerY" secondItem="uEW-H1-iuU" secondAttribute="centerY" id="d9L-zm-fJF"/>
                                                         <constraint firstItem="qP2-eK-Ewl" firstAttribute="leading" secondItem="uEW-H1-iuU" secondAttribute="leading" constant="8" id="xtu-YH-t67"/>
                                                     </constraints>
@@ -57,6 +69,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="burgerImageView" destination="j8D-bC-ZXC" id="OfY-4J-aSu"/>
                                             <outlet property="cardView" destination="uEW-H1-iuU" id="flT-lu-yr7"/>
                                             <outlet property="titleLabel" destination="qP2-eK-Ewl" id="Pxt-j6-G9d"/>
                                         </connections>
@@ -71,7 +84,7 @@
                                 </constraints>
                                 <state key="normal" image="add_button_selected"/>
                                 <connections>
-                                    <segue destination="KOM-cN-R4C" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="Yfj-sx-mMH"/>
+                                    <segue destination="KOM-cN-R4C" kind="presentation" identifier="toAddBurgerSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="Yfj-sx-mMH"/>
                                 </connections>
                             </button>
                         </subviews>

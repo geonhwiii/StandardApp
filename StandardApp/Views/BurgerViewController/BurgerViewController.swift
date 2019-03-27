@@ -28,10 +28,15 @@ class BurgerViewController: UIViewController {
          self?.tableView.delegate = self
          self?.tableView.dataSource = self
       }
-      
-      
-      
-      
+   }
+   
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "toAddBurgerSegue" {
+         let popup = segue.destination as! AddBurgerViewController
+         popup.doneSaving = { [weak self] in
+            self?.tableView.reloadData()
+         }
+      }
    }
 }
 
@@ -47,9 +52,6 @@ extension BurgerViewController: UITableViewDataSource {
       
       return cell
    }
-   
-   
-   
 }
 
 
@@ -58,5 +60,4 @@ extension BurgerViewController: UITableViewDelegate {
    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
       return 160
    }
-   
 }

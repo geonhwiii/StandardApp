@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fO9-LT-XxQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Burger View Controller-->
+        <scene sceneID="Lsx-eo-U4L">
+            <objects>
+                <viewController id="fO9-LT-XxQ" customClass="AddBurgerViewController" customModule="StandardApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qdG-Rf-4HC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybI-wc-a5d" customClass="PopupUIView" customModule="StandardApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="20" width="343" height="160"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="irF-uV-cVm">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="160"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD BURGER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQy-MJ-SIT">
+                                        <rect key="frame" x="8" y="8" width="282" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="XO3-qa-QqQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ng-wl-6HZ" customClass="AppUIButton" customModule="StandardApp" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="108" width="100" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="RlK-KU-u8d"/>
+                                            <constraint firstAttribute="height" constant="44" id="vyM-dk-Ta8"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancel:" destination="fO9-LT-XxQ" eventType="touchUpInside" id="7nK-U5-9UV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tb0-pS-l8L" customClass="AppUIButton" customModule="StandardApp" customModuleProvider="target">
+                                        <rect key="frame" x="235" y="108" width="100" height="44"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="save:" destination="fO9-LT-XxQ" eventType="touchUpInside" id="PV7-M3-soq"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jpb-xG-CDi">
+                                        <rect key="frame" x="8" y="52" width="327" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="MSY-d4-i9W"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjS-R3-lnd">
+                                        <rect key="frame" x="298" y="8" width="37" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="IjS-R3-lnd" secondAttribute="height" multiplier="1:1" id="ibq-vD-iWn"/>
+                                            <constraint firstAttribute="width" constant="37" id="k98-dT-GuQ"/>
+                                        </constraints>
+                                        <color key="tintColor" name="Tint"/>
+                                        <state key="normal" image="camera_selected@50"/>
+                                        <connections>
+                                            <action selector="addPhoto:" destination="fO9-LT-XxQ" eventType="touchUpInside" id="kC3-sx-ahh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="1Ng-wl-6HZ" secondAttribute="bottom" constant="8" id="2OE-6e-Hth"/>
+                                    <constraint firstItem="irF-uV-cVm" firstAttribute="top" secondItem="ybI-wc-a5d" secondAttribute="top" id="5Uz-IS-1DN"/>
+                                    <constraint firstItem="tb0-pS-l8L" firstAttribute="height" secondItem="1Ng-wl-6HZ" secondAttribute="height" id="84w-Ka-Oik"/>
+                                    <constraint firstItem="IjS-R3-lnd" firstAttribute="leading" secondItem="jQy-MJ-SIT" secondAttribute="trailing" constant="8" id="8vn-dl-2Sc"/>
+                                    <constraint firstItem="tb0-pS-l8L" firstAttribute="bottom" secondItem="1Ng-wl-6HZ" secondAttribute="bottom" id="BYn-m6-9h1"/>
+                                    <constraint firstAttribute="trailing" secondItem="tb0-pS-l8L" secondAttribute="trailing" constant="8" id="EK1-0a-R3o"/>
+                                    <constraint firstAttribute="trailing" secondItem="irF-uV-cVm" secondAttribute="trailing" id="ItP-yf-Tw1"/>
+                                    <constraint firstItem="jpb-xG-CDi" firstAttribute="top" secondItem="jQy-MJ-SIT" secondAttribute="bottom" constant="8" id="LRC-wn-PGh"/>
+                                    <constraint firstAttribute="height" constant="160" id="Rta-kI-Yej"/>
+                                    <constraint firstAttribute="trailing" secondItem="jpb-xG-CDi" secondAttribute="trailing" constant="8" id="bN5-XP-E2v"/>
+                                    <constraint firstItem="jpb-xG-CDi" firstAttribute="leading" secondItem="ybI-wc-a5d" secondAttribute="leading" constant="8" id="ctN-GL-rMj"/>
+                                    <constraint firstItem="jQy-MJ-SIT" firstAttribute="leading" secondItem="ybI-wc-a5d" secondAttribute="leading" constant="8" id="dVS-sp-9VH"/>
+                                    <constraint firstAttribute="trailing" secondItem="IjS-R3-lnd" secondAttribute="trailing" constant="8" id="fSK-Y0-8cd"/>
+                                    <constraint firstItem="IjS-R3-lnd" firstAttribute="top" secondItem="ybI-wc-a5d" secondAttribute="top" constant="8" id="gEB-Y2-bO0"/>
+                                    <constraint firstItem="1Ng-wl-6HZ" firstAttribute="leading" secondItem="ybI-wc-a5d" secondAttribute="leading" constant="8" id="hlz-36-FGy"/>
+                                    <constraint firstItem="tb0-pS-l8L" firstAttribute="width" secondItem="1Ng-wl-6HZ" secondAttribute="width" id="ktk-JT-IY1"/>
+                                    <constraint firstItem="irF-uV-cVm" firstAttribute="leading" secondItem="ybI-wc-a5d" secondAttribute="leading" id="mrb-Mk-LAV"/>
+                                    <constraint firstAttribute="bottom" secondItem="irF-uV-cVm" secondAttribute="bottom" id="ui4-Vi-V4c"/>
+                                    <constraint firstItem="jQy-MJ-SIT" firstAttribute="top" secondItem="ybI-wc-a5d" secondAttribute="top" constant="8" id="ztN-ge-Q7f"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ybI-wc-a5d" firstAttribute="top" secondItem="JZ7-Vi-gxe" secondAttribute="top" id="L9C-s3-sYT"/>
+                            <constraint firstItem="JZ7-Vi-gxe" firstAttribute="trailing" secondItem="ybI-wc-a5d" secondAttribute="trailing" constant="16" id="Mdh-im-Y6G"/>
+                            <constraint firstItem="ybI-wc-a5d" firstAttribute="leading" secondItem="JZ7-Vi-gxe" secondAttribute="leading" constant="16" id="giv-BO-J6F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JZ7-Vi-gxe"/>
+                    </view>
+                    <connections>
+                        <outlet property="burgerTextField" destination="jpb-xG-CDi" id="csp-Kp-3AI"/>
+                        <outlet property="cancelButton" destination="1Ng-wl-6HZ" id="C8i-69-uoK"/>
+                        <outlet property="imageView" destination="irF-uV-cVm" id="PuT-cB-fMt"/>
+                        <outlet property="saveButton" destination="tb0-pS-l8L" id="LDG-CQ-j2l"/>
+                        <outlet property="titleLabel" destination="jQy-MJ-SIT" id="ipn-Aj-CcZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KCF-Fh-YMY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172" y="-234.33283358320841"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera_selected@50" width="37.5" height="37.5"/>
+        <namedColor name="Tint">
+            <color red="1" green="0.24300000071525574" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
