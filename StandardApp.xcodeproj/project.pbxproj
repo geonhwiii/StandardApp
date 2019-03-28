@@ -18,6 +18,8 @@
 		BB261488224B38F100BB948D /* AddBurgerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB261487224B38F100BB948D /* AddBurgerViewController.storyboard */; };
 		BB26148A224B3AEF00BB948D /* PopupUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB261489224B3AEF00BB948D /* PopupUIView.swift */; };
 		BB26148C224B3D7F00BB948D /* AppUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB26148B224B3D7F00BB948D /* AppUIButton.swift */; };
+		BB26148F224C571A00BB948D /* ActivitiesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB26148E224C571A00BB948D /* ActivitiesViewController.storyboard */; };
+		BB261491224C577C00BB948D /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB261490224C577C00BB948D /* ActivitiesViewController.swift */; };
 		BB43D360224B20AF0093158D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43D35F224B20AF0093158D /* AppDelegate.swift */; };
 		BB43D367224B20B00093158D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB43D366224B20B00093158D /* Assets.xcassets */; };
 		BB43D36A224B20B00093158D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB43D368224B20B00093158D /* LaunchScreen.storyboard */; };
@@ -38,6 +40,8 @@
 		BB261487224B38F100BB948D /* AddBurgerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddBurgerViewController.storyboard; sourceTree = "<group>"; };
 		BB261489224B3AEF00BB948D /* PopupUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupUIView.swift; sourceTree = "<group>"; };
 		BB26148B224B3D7F00BB948D /* AppUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUIButton.swift; sourceTree = "<group>"; };
+		BB26148E224C571A00BB948D /* ActivitiesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivitiesViewController.storyboard; sourceTree = "<group>"; };
+		BB261490224C577C00BB948D /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		BB43D35C224B20AF0093158D /* StandardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StandardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB43D35F224B20AF0093158D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB43D366224B20B00093158D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,6 +91,15 @@
 			path = AddBurgerViewController;
 			sourceTree = "<group>";
 		};
+		BB26148D224C56F400BB948D /* ActivitiesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BB26148E224C571A00BB948D /* ActivitiesViewController.storyboard */,
+				BB261490224C577C00BB948D /* ActivitiesViewController.swift */,
+			);
+			path = ActivitiesViewController;
+			sourceTree = "<group>";
+		};
 		BB43D353224B20AF0093158D = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +144,7 @@
 		BB43D372224B21600093158D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BB26148D224C56F400BB948D /* ActivitiesViewController */,
 				BB261482224B387100BB948D /* AddBurgerViewController */,
 				BB26146D224B24C800BB948D /* BurgerViewController */,
 			);
@@ -224,6 +238,7 @@
 			files = (
 				BB43D36A224B20B00093158D /* LaunchScreen.storyboard in Resources */,
 				BB26147D224B300E00BB948D /* Colors.xcassets in Resources */,
+				BB26148F224C571A00BB948D /* ActivitiesViewController.storyboard in Resources */,
 				BB261472224B253900BB948D /* BurgerViewController.storyboard in Resources */,
 				BB261488224B38F100BB948D /* AddBurgerViewController.storyboard in Resources */,
 				BB43D367224B20B00093158D /* Assets.xcassets in Resources */,
@@ -241,6 +256,7 @@
 				BB26147B224B2EDE00BB948D /* Theme.swift in Sources */,
 				BB261476224B2CA100BB948D /* UIViewExtensions.swift in Sources */,
 				BB261486224B38A000BB948D /* AddBurgerViewController.swift in Sources */,
+				BB261491224C577C00BB948D /* ActivitiesViewController.swift in Sources */,
 				BB43D360224B20AF0093158D /* AppDelegate.swift in Sources */,
 				BB43D379224B21D10093158D /* BurgerModel.swift in Sources */,
 				BB43D376224B21910093158D /* Data.swift in Sources */,

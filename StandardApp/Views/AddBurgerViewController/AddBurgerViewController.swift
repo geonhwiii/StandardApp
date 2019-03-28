@@ -78,6 +78,7 @@ class AddBurgerViewController: UIViewController {
    // 카메라 버튼 클릭 동작 - 이미지 피커 컨트롤
    fileprivate func presentPhotoPickerController() {
       let myPickerController = UIImagePickerController()
+      myPickerController.allowsEditing = true
       myPickerController.sourceType = .photoLibrary
       myPickerController.delegate = self
       self.present(myPickerController, animated: true, completion: nil)
@@ -118,7 +119,9 @@ class AddBurgerViewController: UIViewController {
 
 extension AddBurgerViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-      if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+      if let image = info[.editedImage] as? UIImage {
+         self.imageView.image = image
+      } else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
          self.imageView.image = image
       }
       dismiss(animated: true, completion: nil)

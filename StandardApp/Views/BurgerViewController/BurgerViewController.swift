@@ -122,4 +122,11 @@ extension BurgerViewController: UITableViewDelegate {
       return UISwipeActionsConfiguration(actions: [edit])
    }
    
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      let storyboard = UIStoryboard(name: String(describing: ActivitiesViewController.self)
+         , bundle: nil)
+      let vc = storyboard.instantiateInitialViewController()!
+      present(vc, animated: true, completion: nil)
+   }
+   
 }
